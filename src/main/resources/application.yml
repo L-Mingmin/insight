@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: insight
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}     # 只放占位，key 绝不进代码/git
+      # chat.model / temperature 等参数 D3 实调时再补（见日计划 §4.2.6 坑 3：
+      # 2.0 起 temperature / max-tokens 不再有兜底默认值，届时必须显式写）
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
